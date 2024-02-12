@@ -9,22 +9,24 @@
     <meta name="author" content="Sergey Gorodnyuk (https://github.com/gorodnyuk)">
 
     <title>Цифровой продуктовый магазин</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 
 <body>
-<h2 align="center">Цифровой продуктовый магазин</h2>
-<table border="1">
+<h3 align="center">Цифровой продуктовый магазин</h3>
+<table>
     <tr>
-        <td>Номер</td>
-        <td>Наименование товара</td>
-        <td>Цена руб.</td>
-        <td>Остаток</td>
+        <th>Номер</th>
+        <th>Наименование</th>
+        <th>Стоимость, руб.</th>
+        <th>Остаток</th>
     </tr>
-    <tr>
-        <td>1</td>
-        <td>Лапша</td>
-        <td>20</td>
-        <td>10</td>
+    <tr th:each="product: ${products}">
+        <td th:text="${product.id}"/>
+        <td th:text="${product.name}"/>
+        <td th:text="${product.price}"/>
+        <td th:text="${product.balance}"/>
     </tr>
 </table>
 </div>

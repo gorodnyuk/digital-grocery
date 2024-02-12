@@ -24,7 +24,7 @@
                 <constraints nullable="false"/>
             </column>
 
-            <column name="cost"
+            <column name="price"
                     type="decimal"
                     remarks="Стоимость товара">
                 <constraints nullable="false"/>
