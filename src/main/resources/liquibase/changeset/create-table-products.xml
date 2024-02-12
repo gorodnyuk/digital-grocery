@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="create-table-products" author="Sergey Gorodnyuk">
+
+        <createTable tableName="products">
+
+            <column name="id"
+                    type="bigint"
+                    remarks="Идентификатор">
+                <constraints nullable="false"
+                             unique="true"
+                             primaryKey="true"
+                             primaryKeyName="pk_products"/>
+            </column>
+
+            <column name="name"
+                    type="varchar(2000)"
+                    remarks="Наименование товара">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="cost"
+                    type="decimal"
+                    remarks="Стоимость товара">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="balance"
+                    type="int"
+                    remarks="Остаток товара на складе">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+
+        <addAutoIncrement tableName="products" columnName="id" columnDataType="bigint" startWith="1" incrementBy="1"/>
+
+    </changeSet>
+
+</databaseChangeLog>
